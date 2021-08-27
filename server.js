@@ -42,10 +42,8 @@ class Client extends BaseClient {
         username: req.body.author.Username,
         uid: req.body.author.UID,
         avatar: req.body.Avatar,
-      }
-      
-      req.body.author.send = function (ctn) {
-        let bodyJson = {author: req.body.to, content: ctn, to: req.body.author.UID, bot: true, createAt: Date.now() }
+        send: function (ctn) {
+        let bodyJson = {author: req.body.to, content: ctn, to: req.body.author.uid, bot: true, createAt: Date.now() }
         
         fetch(`https://zhat.cf/api/send/message`, {
           method: "PATCH",
@@ -54,7 +52,9 @@ class Client extends BaseClient {
           },
           body: JSON.stringify(bodyJson)
         })
-      };
+      }
+      }
+      
       
       this.client.emit("message", req.body);
     })
