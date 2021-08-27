@@ -2,7 +2,7 @@
 ```
 Official API wrapper for https://zhat.cf
 ```
-- [developer]()
+- [developer](https://zhat.cf/me/developer)
 
 # Install to use
 ```
@@ -27,7 +27,7 @@ client.login('token');
 ```
 new Client()
 ```
-- return #Client
+- return [#client](#client)
 
 #### BaseClient
 ```
@@ -48,7 +48,7 @@ none
   console.log(message)
 });
 ```
-- return #Message
+- return [#Message](#message)
 
 ### Methods
 #### login
