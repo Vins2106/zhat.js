@@ -1,8 +1,8 @@
-# NOTE: FOR NOW, THIS PACKAGE NOT USEABLE.
 # Zhat.js
 ```
 Official API wrapper for https://zhat.cf
 ```
+- [developer]()
 
 # Install to use
 ```
@@ -20,3 +20,39 @@ client.on("ready", () => {
 
 client.login('token');
 ```
+
+# Docs
+## Classes
+#### Client
+```
+new Client()
+```
+- return #Client
+
+#### BaseClient
+```
+none
+```
+
+### Events
+#### ready
+```
+<client>.on("ready", () => {
+  console.log("Ready!")
+});
+```
+- return #None
+#### message
+```
+<client>.on("message", (message) => {
+  console.log(message)
+});
+```
+- return #Message
+
+### Methods
+#### login
+```
+<client>.login('token')
+```
+

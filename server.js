@@ -37,13 +37,22 @@ class Client extends BaseClient {
     app.post("/receive", async (req, res) => {
       if (!req.body) return;
       
+      
+      req.body.author = {
+        username: req.body.author.Username,
+        uid: req.body.author.UID,
+        avatar: req.body.Avatar,
+      }
+      
       req.body.author.send = function (ctn) {
+        let bodyJson = {author: req.body.to, content: ctn, to: req.body.author.UID, bot: true, createAt: Date.now() }
+        
         fetch(`https://zhat.cf/api/send/message`, {
           method: "PATCH",
           headers: {
             'Content-Type': "application/json"
           },
-          body: JSON.stringify({author: req.body.to, content: ctn, to: req.body.author.UID, bot: true, createAt: Date.now() })
+          body: JSON.stringify(bodyJson)
         })
       };
       
