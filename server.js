@@ -41,7 +41,7 @@ class Client extends BaseClient {
       req.body.author = {
         username: req.body.author.Username,
         uid: req.body.author.UID,
-        avatar: req.body.Avatar,
+        avatar: req.body.author.Avatar,
         send: function (ctn) {
         let bodyJson = {author: req.body.to, content: ctn, to: req.body.author.uid, bot: true, createAt: Date.now() }
         
