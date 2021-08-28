@@ -11,7 +11,7 @@ npm i zhat.js
 
 # Example
 ```
-const Zhat = require("zhat.cf");
+const Zhat = require("zhat.js");
 const client = new Zhat.Client();
 
 client.on("ready", () => {
@@ -55,4 +55,3 @@ none
 ```
 <client>.login('token')
 ```
-
