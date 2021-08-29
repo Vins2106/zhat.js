@@ -80,7 +80,11 @@ class Client extends BaseClient {
         }).then(res => res.json()).then(data2 => {
         this.client.user = data2;
         this.client.emit("ready", data2)
+    }).catch(e => {
+      throw TypeError("Invalid token")
     })      
+    }).catch(e => {
+      throw TypeError("Invalid token")
     })
   }
 }
